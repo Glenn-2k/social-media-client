@@ -1,9 +1,15 @@
 import { save } from '../../storage/index.js'
 import { login } from './login.js'
+import { localStorageMock } from '../mocks/localStorageMock.js'
 
 jest.mock('../../storage/index.js', () => ({
   save: jest.fn(), // mocking the save function
+  load: jest.fn(() => 'mock-token'),
 }))
+
+Object.defineProperty(global, 'localStorage', {
+  value: localStorageMock(),
+})
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -21,11 +27,14 @@ describe('login', () => {
     const profile = await login(email, password)
 
     expect(fetch).toHaveBeenCalledWith(
-      'https://api.example.com/social/auth/login',
+      'https://nf-api.onrender.com/api/v1/social/auth/login',
       {
         method: 'post',
         body: JSON.stringify({ email, password }),
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer mock-token',
+        },
       },
     )
 
