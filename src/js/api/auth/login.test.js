@@ -3,7 +3,7 @@ import { login } from './login.js'
 import { localStorageMock } from '../mocks/localStorageMock.js'
 
 jest.mock('../../storage/index.js', () => ({
-  save: jest.fn(), // mocking the save function
+  save: jest.fn(),
   load: jest.fn(() => 'mock-token'),
 }))
 
