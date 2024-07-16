@@ -1,9 +1,22 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
+  env: {
+    correctEmail: 'TEST123TEST@noroff.no',
+    correctPassword: 'TEST12345',
+    wrongEmail: 'wrongEmail@wrong.wrong',
+    wrongPassword: 'wrongPassword',
+    shortPassword: 'short',
+  },
+
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      on('task', {
+        log(message) {
+          console.log(message)
+          return null
+        },
+      })
     },
   },
-});
+})
