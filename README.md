@@ -1,2 +1,2 @@
 ## Status
-[![Automated E2E Testing](https://github.com/Glenn-2k/social-media-client/actions/workflows/e2e-testing.yml/badge.svg?branch=workflow)](https://github.com/Glenn-2k/social-media-client/actions/workflows/e2e-testing.yml)
+[![Automated E2E Testing](https://github.com/Glenn-2k/social-media-client/actions/workflows/e2e-testing.yml/badge.svg?branch=workflow)](https://github.com/Glenn-2k/social-media-client/actions/workflows/e2e-testing.yml) - [![Automated Unit Testing](https://github.com/Glenn-2k/social-media-client/actions/workflows/unit-testing.yml/badge.svg?branch=workflow)](https://github.com/Glenn-2k/social-media-client/actions/workflows/unit-testing.yml)
